@@ -20,7 +20,7 @@ class Auto:
     def kiihdytä(self, vauhti):
         if self.nopeusnyt + vauhti < 0:
             self.nopeusnyt = 0
-        elif self.nopeusnyt + vauhti > 142:
+        elif self.nopeusnyt + vauhti > self.huippun:
             self.nopeusnyt = 142
         else:
             self.nopeusnyt = self.nopeusnyt + vauhti

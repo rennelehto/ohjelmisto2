@@ -34,8 +34,8 @@ class Auto:
         self.matka = self.matka + (self.nopeusnyt * tunnit)
 
 autoja = []
-määrä = 10
-for i in range(määrä+1):
+
+for i in range(1, 11):
 
     autoja.append(f'auto{i}')
     nop = random.randint(100, 200)
@@ -52,12 +52,11 @@ matka = 0
 y = 0
 while matka < 10000:
     for a in autoja:
-        x=0
         kiih = random.randint(10, 15)
-        autoja[y].kiihdytä(kiih)
-        autoja[y].kulje(1)
-        if autoja[y].matka > matka:
-            autoja[y].matka = matka
+        a.kiihdytä(kiih)
+        a.kulje(1)
+        if a.matka > 10000:
+            break
         y +=1
 else:
     z = 0

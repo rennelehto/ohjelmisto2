@@ -43,23 +43,24 @@ for i in range(1, 11):
 
 #print(autoja[0].huippun)
 #print(Auto.autojen_määrä)
-x = 0
+'''x = 0
 for a in autoja:
     print(f'Rekisterinumero: {autoja[x].rekkari}, huippunopeus: {autoja[x].huippun} km/h, nopeus nyt: {autoja[x].nopeusnyt} km/h, kuljettu matka: {autoja[x].matka} km.')
-    x +=1
+    x +=1'''
 
 matka = 0
-y = 0
 while matka < 10000:
     for a in autoja:
-        kiih = random.randint(10, 15)
+        kiih = random.randint(-10, 15)
         a.kiihdytä(kiih)
         a.kulje(1)
-        if a.matka > 10000:
-            break
-        y +=1
+        if a.matka > matka:
+            matka = a.matka
+
 else:
     z = 0
+    print(f'{'Rekisteritunnus':15} {'Huippunopeus':>15s} {'Hetkellinen nopeus':>20} {'Kuljettu matka':>15s}')
     for a in autoja:
-        print(f'Rekisterinumero: {autoja[z].rekkari}, huippunopeus: {autoja[z].huippun} km/h, nopeus nyt: {autoja[z].nopeusnyt} km/h, kuljettu matka: {autoja[z].matka} km.')
+
+        print(f'{autoja[z].rekkari:>15}{autoja[z].huippun:15}{autoja[z].nopeusnyt:20} {autoja[z].matka:15}')
         z +=1

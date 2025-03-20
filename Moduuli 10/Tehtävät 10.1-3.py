@@ -42,7 +42,18 @@ class Talo:
         print(f'Hissi nro {nro} lähtee kerroksesta {self.talon_hissit[nro-1].sijainti}.')
         self.talon_hissit[nro-1].siirry_kerrokseen(kerros)
 
+    def palohälytys(self):
+        print('\n!! PALOHÄLYTYS !!\n')
+        for h in self.talon_hissit:
+            h.sijainti = h.alin
 
 talo1 = Talo(7, 1, 3)
 
 talo1.aja_hissiä(3, 5)
+talo1.palohälytys()
+
+nr = 1
+
+for h in talo1.talon_hissit:
+    print(f'{nr}. hissi on saapunut {h.sijainti}. kerrokseen.')
+    nr = nr+1

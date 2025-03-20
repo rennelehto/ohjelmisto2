@@ -1,6 +1,3 @@
-from ctypes.macholib.dylib import dylib_info
-
-
 class Hissi:
     def __init__(self, alin, ylin):
         self.alin = alin
@@ -8,10 +5,13 @@ class Hissi:
         self.sijainti = self.alin
 
     def siirry_kerrokseen(self, kerros):
+        if kerros > self.ylin:
+            kerros = self.ylin
+        elif kerros < self.alin:
+            kerros = self.alin
         while self.sijainti != kerros:
-            if self.sijainti > kerros and kerros <= self.ylin:
+            if self.sijainti > kerros:
                 testihissi.kerros_alas()
-
             elif self.sijainti < kerros:
                 testihissi.kerros_ylös()
 

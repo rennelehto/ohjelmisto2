@@ -59,7 +59,7 @@ while matka < 10000:
 
 else:
     z = 0
-    print(f'{'Rekisteritunnus':15} {'Huippunopeus':>15s} {'Hetkellinen nopeus':>20} {'Kuljettu matka':>15s}')
+    print(f'{'Rekisteritunnus':15} {'Huippunopeus':>15} {'Hetkellinen nopeus':>20} {'Kuljettu matka':>15}')
     for a in autoja:
 
         print(f'{autoja[z].rekkari:>15}{autoja[z].huippun:15}{autoja[z].nopeusnyt:20} {autoja[z].matka:15}')

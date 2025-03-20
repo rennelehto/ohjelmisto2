@@ -11,6 +11,8 @@ välein seuraavat toimenpiteet:
 Kilpailu jatkuu, kunnes jokin autoista on edennyt vähintään 10000 kilometriä. Lopuksi tulostetaan
 kunkin auton kaikki ominaisuudet selkeäksi taulukoksi muotoiltuna.'''
 
+import random
+
 class Auto:
     autojen_määrä = 0
     def __init__(self, rekkari, huippun):
@@ -29,8 +31,36 @@ class Auto:
             self.nopeusnyt = self.nopeusnyt + vauhti
 
     def kulje(self, tunnit):
-        self.matka = self.nopeusnyt * tunnit
+        self.matka = self.matka + (self.nopeusnyt * tunnit)
 
 autoja = []
+määrä = 10
+for i in range(määrä+1):
 
-for auto in autoja
+    autoja.append(f'auto{i}')
+    nop = random.randint(100, 200)
+    autoja[i-1] = Auto(f'ABC-{i}', nop)
+
+#print(autoja[0].huippun)
+#print(Auto.autojen_määrä)
+x = 0
+for a in autoja:
+    print(f'Rekisterinumero: {autoja[x].rekkari}, huippunopeus: {autoja[x].huippun} km/h, nopeus nyt: {autoja[x].nopeusnyt} km/h, kuljettu matka: {autoja[x].matka} km.')
+    x +=1
+
+matka = 0
+y = 0
+while matka < 10000:
+    for a in autoja:
+        x=0
+        kiih = random.randint(10, 15)
+        autoja[y].kiihdytä(kiih)
+        autoja[y].kulje(1)
+        if autoja[y].matka > matka:
+            autoja[y].matka = matka
+        y +=1
+else:
+    z = 0
+    for a in autoja:
+        print(f'Rekisterinumero: {autoja[z].rekkari}, huippunopeus: {autoja[z].huippun} km/h, nopeus nyt: {autoja[z].nopeusnyt} km/h, kuljettu matka: {autoja[z].matka} km.')
+        z +=1

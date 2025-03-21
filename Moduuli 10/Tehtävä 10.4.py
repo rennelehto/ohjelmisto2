@@ -52,19 +52,23 @@ class Kilpailu:
 
     def kilpailu_ohi(self):
         for a in self.autoja:
-            True == (a.matka >= self.pituus)
+            höh = a.matka >= self.pituus
+
+
+
 
 
 kisa = Kilpailu('Suuri romuralli', 8000, 10)
 #print(kisa.autoja)
 #kisa.tulosta_tilanne()
 
-#while False == kisa.kilpailu_ohi():
+while not kisa.kilpailu_ohi():
 
-kisa.tunti_kuluu()
-print('Tunti kului.')
-kisa.kilpailu_ohi()
-print('Onko kisa ohi?')
-   # if kisa.aika %10:
+    kisa.tunti_kuluu()
+    print('Tunti kului.')
+    kisa.kilpailu_ohi()
+    print('Onko kisa ohi?')
+    if kisa.aika %10:
+        kisa.tulosta_tilanne()
 kisa.tulosta_tilanne()
 

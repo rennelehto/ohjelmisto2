@@ -1,5 +1,4 @@
 '''
-
 Toteuta seuraava luokkahierarkia Python-kielellä: Julkaisu voi olla kirja tai lehti. Jokaisella julkaisulla on nimi.
 Kirjalla on lisäksi kirjoittaja ja sivumäärä, kun taas lehdellä on päätoimittaja. Kirjoita luokkiin myös tarvittavat
 alustajat. Tee aliluokkiin metodi tulosta_tiedot, joka tulostaa kyseisen julkaisun kaikki tiedot. Luo pääohjelmassa
@@ -12,7 +11,7 @@ class Julkaisu:
         self.nimi = nimi
 
     def tulosta_tiedot(self):
-        print(f'{self.nimi}')
+        print(f'Julkaisu: {self.nimi}')
 
 class Lehti(Julkaisu):
     def __init__(self, nimi, päätoimittaja):

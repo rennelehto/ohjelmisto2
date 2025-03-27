@@ -16,7 +16,7 @@ class Auto:
             self.nopeusnyt = self.nopeusnyt + vauhti
 
     def kulje(self, tunnit):
-        self.matka = self.matka + (self.nopeusnyt * tunnit)
+        self.matka += self.nopeusnyt * tunnit
 
 
 
@@ -32,8 +32,8 @@ class Kilpailu:
 
         for i in range(autolista+1):
             self.autoja.append(f'auto{i}')
-            nop = random.randint(100, 200)
-            self.autoja[i - 1] = Auto(f'ABC-{i}', nop)
+            huippun = random.randint(100, 200)
+            self.autoja[i - 1] = Auto(f'ABC-{i}', huippun)
 
 
     def tunti_kuluu(self):
@@ -52,7 +52,8 @@ class Kilpailu:
 
     def kilpailu_ohi(self):
         for a in self.autoja:
-            höh = a.matka >= self.pituus
+            if  a.matka >= self.pituus:
+                kisa.tulosta_tilanne()
 
 
 

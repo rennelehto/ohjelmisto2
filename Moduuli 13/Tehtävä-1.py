@@ -1,10 +1,9 @@
-from flask import Flask, request
+from flask import Flask
 import math
 
 app = Flask(__name__)
 @app.route('/alkuluku/<luku>')
 def alkuluku(luku):
-    #args = request.args
     number = int(luku)
     for kerroin in range(2, number, 1):
         if number % kerroin == 0:

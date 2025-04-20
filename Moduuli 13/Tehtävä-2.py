@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask
 import mysql.connector
 #http://127.0.0.1:3000/kentt%C3%A4/EFHK
 app = Flask(__name__)
@@ -10,14 +10,11 @@ def koodi(ICAO):
     tulos = kursori.fetchall()
     if kursori.rowcount > 0:
         for rivi in tulos:
-            name = rivi[0]
-            municipality = rivi[1]
-
-        vastaus = {
-            "ICAO": ICAO,
-            "Name": name,
-            "Municipality": municipality
-        }
+            vastaus = {
+                "ICAO": ICAO,
+                "Name": rivi[0],
+                "Municipality": rivi[1]
+            }
 
         return vastaus
 
